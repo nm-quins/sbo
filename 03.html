@@ -102,12 +102,11 @@
 							
 							<form action="#" class="b-form b-order-form" data-tabulator-tab-contents="true" data-tabulator-tab-contents-descriptor="form">
 								
-								<p class="b-form-requirements">Поля, отмеченные «<span class="b-form-requirements-symbol">*</span>» обязательны для заполнения. </p>
-								
 								<section class="b-form-section b-form-passport-section b-form-double-section g-cleared">
 									<div class="b-form-section-inside">
 										<h3 class="b-form-section-title">Паспортные данные</h3>
 										<h4 class="b-form-label b-form-birth-date-label">Дата рождения</h4>
+										<h4 class="b-form-label b-form-passport-number-label">Серия и номер паспорта</h4>
 										<fieldset class="b-form-fieldset b-form-birth-date-fieldset">
 											
 											<div class="b-dropdown b-selector-dropdown b-form-birth-date-day-selector-dropdown" data-dropdown="true" data-dropdown-descriptor="selector">
@@ -663,7 +662,7 @@
 											</div>
 										</fieldset>
 										<fieldset class="b-form-fieldset b-form-address-home-fieldset g-cleared">
-											<div class="b-text-field b-form-address-home-text-field">
+											<div class="b-text-field b-required-text-field b-form-address-home-text-field">
 												<input type="text" placeholder="Дом" class="b-text-field-entity">
 											</div>
 											<div class="b-text-field b-form-address-enclosure-text-field">
@@ -675,6 +674,8 @@
 										</fieldset>
 									</div>
 								</section>
+								
+								<p class="b-form-requirements">Поля, отмеченные «<span class="b-form-requirements-symbol">*</span>» обязательны для заполнения. </p>
 								
 								<section class="b-form-section b-form-actions-section">
 									<div class="b-form-section-inside">

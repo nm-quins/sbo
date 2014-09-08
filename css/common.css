@@ -1250,7 +1250,9 @@ a:hover {
 		
 		font-size:14px;
 		line-height:20px;
-		padding:45px 20px;
+		padding:45px 0;
+		margin:0 20px;
+		border-top:1px solid #e1e1e1;
 	}
 	
 		.b-order-form .b-form-requirements .b-form-requirements-symbol {
@@ -1398,7 +1400,7 @@ a:hover {
 			width:auto;
 		}
 		
-	.b-order-form .b-form-patronymic-fieldset,
+	.b-order-form .b-form-name-fieldset,
 	.b-order-form .b-form-birth-date-fieldset,
 	.b-order-form .b-form-passport-date-fieldset,
 	.b-order-form .b-form-passport-number-fieldset,
@@ -1438,26 +1440,35 @@ a:hover {
 	.b-order-form .b-form-address-home-text-field {
 		
 		float:left;
-		width:70px;
+		width:65px;
 	}
 	
 	.b-order-form .b-form-address-enclosure-text-field {
 		
 		float:left;
-		width:110px;
+		width:100px;
 		margin-left:10px;
 	}
 	
 	.b-order-form .b-form-address-apartment-text-field {
 		
 		float:left;
-		width:70px;
+		width:65px;
 		margin-left:10px;
 	}
 	
 	.b-order-form .b-form-birth-date-label {
 		
+		float:left;
+		width:270px;
 		margin-bottom:-5px;
+	}
+	
+	.b-order-form .b-form-passport-number-label {
+		
+		float:left;
+		width:270px;
+		margin:0 0 -5px 20px;
 	}
 	
 	.b-order-form .b-form-passport-date-label {
