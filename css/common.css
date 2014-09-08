@@ -1540,6 +1540,7 @@ a:hover {
 			text-align:center;
 			color:#4b994b;
 			text-decoration:none;
+			border:0;
 		}
 		
 		.b-order-form .b-form-structure .b-form-structure-description-toggle:before,
@@ -1644,6 +1645,18 @@ a:hover {
 				width:59px;
 				margin-left:-29px;
 			}
+			
+	.b-order-form .b-form-opened-structure {}
+		
+		.b-order-form .b-form-opened-structure .b-form-structure-description-toggle:before {
+			
+			display:none;
+		}
+		
+		.b-order-form .b-form-opened-structure .b-form-structure-description-toggle:after {
+			
+			display:block;
+		}
 	
 	.b-order-form .b-form-label {
 

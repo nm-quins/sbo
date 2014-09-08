@@ -1,8 +1,103 @@
 $(document).ready(function() {
+	
+	if($("[data-field]").length)
+		initializeFields();
+	
+	if($("[data-accordion]").length)
+		initializeAccordions();
 
 	if($("[data-dropdown]").length)
 		initializeDropdowns();
+		
+	if($("[data-field-name='order-price']").length) {
+		
+		$("[data-field-name='order-price']").find("[data-field-entity]").change(function () {
+		
+			var priceValue = $(this).val();
+			var totalPrice = (priceValue == 1 ? "1 000 руб." : (priceValue == 2 ? "2 000 руб." : "5 000 руб."));
+			$("[data-form-total-price]").text(totalPrice);
+		});
+	}
+		
+	if($("[data-form-target]").length) {
+		
+		var formTargetField = $("[data-form-target-field]");
+		
+		$("[data-form-target]").click(function () {
+			
+			$("[data-form-target]").filter(".b-form-current-target").removeClass("b-form-current-target");
+			$(this).addClass("b-form-current-target");
+			formTargetField.val($(this).data("form-target-value"));
+			
+			return false;
+		});
+	}
 });
+
+
+/* Fields */
+var fields = {};
+var fieldsProperties = {};
+
+function initializeFields() {
+
+	$("[data-field]").each(function() {
+		
+		var fieldID = generateIdentificator();
+		var fieldDescriptor = ($(this).attr("data-field-descriptor") ? $(this).attr("data-field-descriptor") : "");
+		
+		fields[fieldID] = {
+			
+			field: $(this),
+			entity: ($(this).find("[data-field-entity]").length ? $(this).find("[data-field-entity]") : null),
+			repository: ($(this).parents().find("[data-field-repository]").length ? $(this).parents().find("[data-field-repository]") : null),
+			properties: (fieldsProperties[fieldDescriptor] ? fieldsProperties[fieldDescriptor] : {})
+		}
+		
+		fields[fieldID].field.attr("data-field-identificator", fieldID);
+		
+		switch(fieldDescriptor) {
+			
+			case "checkbox":
+			
+				fields[fieldID].field.click(function() {
+					
+					$(this).toggleClass("b-checked-checkbox-field");
+					
+					if(fields[fieldID].entity)
+						fields[fieldID].entity.attr("checked", ($(this).hasClass("b-checked-checkbox-field") ? true : false));
+						
+					return false;
+				});
+			
+			break;
+			
+
+			case "radio":
+		
+				fields[fieldID].field.click(function() {
+
+					if(!$(this).hasClass("b-checked-radio-field")) {
+					
+						var currentCheckedField = $("[data-field][data-field-descriptor='radio'][data-field-name='" + $(this).data("field-name") + "'][class*='b-checked-radio-field']");
+						
+						if(currentCheckedField.length)
+							currentCheckedField.toggleClass("b-checked-radio-field");
+					
+						$(this).toggleClass("b-checked-radio-field");
+					
+						if(fields[fieldID].entity)
+							fields[fieldID].entity.prop("checked", true);
+					}
+				});
+		
+			break;
+		}
+		
+		if(fields[fieldID].properties.initializeFunction)
+			executeFunction(fields[fieldID].properties.initializeFunction, null, fieldID);
+	});
+}
 
 
 /* Dropdowns */
@@ -123,6 +218,65 @@ function initializeFilterDropdown(dropdownID) {
 			});
 		});
 	}
+}
+
+
+var accordions = {}
+var accordionsProperties = {
+	
+	"form-structure": {
+		
+		additionalClass: "b-form-opened-structure",
+		animation: "slide"
+	}
+};
+
+function initializeAccordions() {
+	
+	$(document).on("click", "[data-accordion-tumbler]", function() {
+		
+		var accordion = $(this).parents("[data-accordion]").eq(0);
+		
+		if(!accordion.attr("data-accordion-identificator")) {
+			
+			var accordionID = generateIdentificator();
+			var accordionDescriptor = (accordion.attr("data-accordion-descriptor") ? accordion.attr("data-accordion-descriptor") : "");
+			
+			accordions[accordionID] = {
+			
+				accordion: accordion,
+				descriptor: accordionDescriptor,
+				tumbler: $(this),
+				concealment: (accordion.find("[data-accordion-concealment]").length) ? accordion.find("[data-accordion-concealment]").first() : null,
+				properties: (accordionsProperties[accordionDescriptor] ? accordionsProperties[accordionDescriptor] : {}) 
+			}
+			
+			accordions[accordionID].accordion.attr("data-accordion-identificator", accordionID);
+			
+		} else
+			accordionID = accordion.attr("data-accordion-identificator");
+		
+		if(accordions[accordionID].properties.additionalClass)
+			accordions[accordionID].accordion.toggleClass(accordions[accordionID].properties.additionalClass);
+		
+		if(accordions[accordionID].properties.animation && accordions[accordionID].properties.animation == "slide") {
+			
+			if(accordions[accordionID].concealment.hasClass("g-hidden")) {
+				
+				accordions[accordionID].concealment.css("display", "none");
+				accordions[accordionID].concealment.toggleClass("g-hidden");
+			}
+			
+			accordions[accordionID].concealment.slideToggle(350);
+
+		} else
+			accordions[accordionID].concealment.toggleClass("g-hidden");
+			
+		if(accordions[accordionID].properties.initializeFunction)
+			executeFunction(accordions[accordionID].properties.initializeFunction, null, accordionID);
+
+		return false;
+	});
 }
 
 

@@ -105,15 +105,16 @@
 								<section class="b-form-section b-form-target-section g-cleared">
 									<div class="b-form-section-inside">
 										<h3 class="b-form-section-title">Выберите, кто&nbsp;будет&nbsp;защищен</h3>
-										<a href="#" class="b-form-target b-form-s-target b-form-current-target">
+										<input type="hidden" id="order-form-target" value="1" data-form-target-field="true">
+										<a href="#" class="b-form-target b-form-s-target b-form-current-target" data-form-target="true" data-form-target-value="1">
 											<span class="b-form-target-title">Дети</span>
 											<span class="b-form-target-age">2 &ndash; 14 лет</span>
 										</a>
-										<a href="#" class="b-form-target b-form-m-target">
+										<a href="#" class="b-form-target b-form-m-target" data-form-target="true" data-form-target-value="2">
 											<span class="b-form-target-title">Супруги</span>
 											<span class="b-form-target-age">18 &ndash; 65 лет</span>
 										</a>
-										<a href="#" class="b-form-target b-form-l-target">
+										<a href="#" class="b-form-target b-form-l-target" data-form-target="true" data-form-target-value="3">
 											<span class="b-form-target-title">Родители</span>
 											<span class="b-form-target-age">35 &ndash; 75 лет</span>
 										</a>
@@ -123,15 +124,15 @@
 								<section class="b-form-section b-form-structure-section g-cleared">
 									<div class="b-form-section-inside">
 										<h3 class="b-form-section-title">Страховая защита, включенная в&nbsp;программу</h3>
-										<div class="b-form-structure">
+										<div class="b-form-structure" data-accordion="true" data-accordion-descriptor="form-structure">
 											<ul class="b-form-structure-collection g-cleared">
 												<li class="b-form-structure-collection-clause b-form-structure-collection-fractures-clause">Переломы</li>
 												<li class="b-form-structure-collection-clause b-form-structure-collection-frostbites-clause">Обморожения</li>
 												<li class="b-form-structure-collection-clause b-form-structure-collection-injuries-clause">Тяжелые травмы</li>
 												<li class="b-form-structure-collection-clause b-form-structure-collection-burns-clause">Ожоги</li>
 											</ul>
-											<a href="#" class="b-form-structure-description-toggle">Подробнее</a>
-											<div class="b-form-structure-description">
+											<a href="#" class="b-form-structure-description-toggle" data-accordion-tumbler="true">Подробнее</a>
+											<div class="b-form-structure-description g-hidden" data-accordion-concealment="true">
 												<p>Также в каждой из программ предусмотрена защита страхователя на случай ухода из жизни в результате несчастного случая с дополнительной выплатой, если причиной страхового случая стала авиационная или железнодорожная катастрофа.</p>
 												<p>Подробный перечень травм, включенных в страховую программу, смотрите в разделе «Полные условия страхования».</p>
 											</div>
@@ -143,20 +144,20 @@
 									<div class="b-form-section-inside">
 										<h3 class="b-form-section-title">Сумма страховой защиты</h3>
 										<fieldset class="b-form-fieldset">
-											<span class="b-radio-field b-checked-radio-field">
-												<input type="radio" id="order-form-price" class="b-radio-field-entity">
+											<span class="b-radio-field b-checked-radio-field" data-field="true" data-field-descriptor="radio" data-field-name="order-price">
+												<input type="radio" name="order-form-price" id="order-form-price-1" class="b-radio-field-entity" value="1" data-field-entity="true" checked>
 											</span>
 											<label for="order-form-price-1" class="b-form-label b-form-radio-field-label">100 000 руб.</label>
 										</fieldset>
 										<fieldset class="b-form-fieldset">
-											<span class="b-radio-field">
-												<input type="radio" id="order-form-price" class="b-radio-field-entity">
+											<span class="b-radio-field" data-field="true" data-field-descriptor="radio" data-field-name="order-price">
+												<input type="radio" name="order-form-price" id="order-form-price-2" class="b-radio-field-entity" value="2" data-field-entity="true">
 											</span>
 											<label for="order-form-price-2" class="b-form-label b-form-radio-field-label">200 000 руб.</label>
 										</fieldset>
 										<fieldset class="b-form-fieldset">
-											<span class="b-radio-field">
-												<input type="radio" id="order-form-price" class="b-radio-field-entity">
+											<span class="b-radio-field" data-field="true" data-field-descriptor="radio" data-field-name="order-price">
+												<input type="radio" name="order-form-price" id="order-form-price-3" class="b-radio-field-entity" value="3" data-field-entity="true">
 											</span>
 											<label for="order-form-price-3" class="b-form-label b-form-radio-field-label">500 000 руб.</label>
 										</fieldset>
@@ -169,7 +170,7 @@
 										<ul class="b-form-total-outcomes g-cleared">
 											<li class="b-form-total-outcomes-clause">
 												<span class="b-form-total-outcomes-clause-title">Итоговая стоимость:</span>
-												<strong class="b-form-total-outcomes-clause-contents">2 000 руб.</strong>
+												<strong class="b-form-total-outcomes-clause-contents" data-form-total-price="true">1 000 руб.</strong>
 											</li>
 											<li class="b-form-total-outcomes-clause">
 												<span class="b-form-total-outcomes-clause-title">Срок действия:</span>
