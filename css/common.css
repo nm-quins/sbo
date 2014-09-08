@@ -980,6 +980,82 @@ a:hover {
 		content:"";
 	}
 	
+	.b-products-article .b-products-article-documents {
+		
+		padding:50px 20px;
+	}
+	
+		.b-products-article .b-products-article-documents .b-products-article-documents-first-section {
+			
+			float:left;
+			width:260px;
+			margin-right:-100%;
+		}
+		
+		.b-products-article .b-products-article-documents .b-products-article-documents-second-section {
+			
+			margin-left:390px;
+		}
+
+		
+		.b-products-article .b-products-article-documents .b-products-article-documents-title {
+			
+			font-family: "PFAgoraSlabBold";
+			font-size:28px;
+			line-height:36px;
+		}
+		
+		.b-products-article .b-products-article-documents .b-products-article-documents-description {
+			
+			font-size:13px;
+			line-height:22px;
+			margin-top:10px;
+		}
+		
+		.b-products-article .b-products-article-documents .b-products-article-documents-collection {
+			
+			margin-left:-30px;
+		}
+		
+			.b-products-article .b-products-article-documents .b-products-article-documents-collection .b-products-article-documents-collection-clause {
+				
+				float:left;
+				font-family: "PFAgoraSlabBold";
+				font-size:14px;
+				line-height:18px;
+				width:170px;
+				margin-left:30px;
+				text-align:center;
+			}
+			
+				.b-products-article .b-products-article-documents .b-products-article-documents-collection .b-products-article-documents-collection-clause .b-products-article-documents-collection-clause-link {
+					
+					position:relative;
+					display:block;
+					color:#272727;
+					border:0;
+				}
+				
+				.b-products-article .b-products-article-documents .b-products-article-documents-collection .b-products-article-documents-collection-clause .b-products-article-documents-collection-clause-link:before {
+			
+					content: "";
+					display: block;
+					width: 110px;
+					height: 101px;
+					margin: 0 auto 15px;
+					background: url(../i/graphics.png) -420px -320px no-repeat;
+				}
+				
+				.b-products-article .b-products-article-documents .b-products-article-documents-collection .b-products-article-documents-collection-clause .b-products-article-documents-collection-clause-link:hover {
+					
+					color:#4b994b;
+				}
+
+				.b-products-article .b-products-article-documents .b-products-article-documents-collection .b-products-article-documents-collection-clause .b-products-article-documents-collection-clause-link:hover:before {
+			
+					background-position: -300px -320px;
+				}
+	
 .b-tabs {
 
 	width: 100%;

@@ -9,6 +9,9 @@ $(document).ready(function() {
 	if($("[data-dropdown]").length)
 		initializeDropdowns();
 		
+	if($("[data-tabulator]").length)
+		initializeTabulators();
+		
 	if($("[data-field-name='order-price']").length) {
 		
 		$("[data-field-name='order-price']").find("[data-field-entity]").change(function () {
@@ -276,6 +279,85 @@ function initializeAccordions() {
 			executeFunction(accordions[accordionID].properties.initializeFunction, null, accordionID);
 
 		return false;
+	});
+}
+
+
+/* Tabulators */
+var tabulators = {};
+var tabulatorsProperties = {
+	
+	"products-article": {
+		
+		tabsCurrentAdditionalClass: "b-tabs-current-clause"
+	}
+};
+
+function initializeTabulators() {
+	
+	$("[data-tabulator]").each(function() {
+
+		var tabulatorID = generateIdentificator();
+		var tabulatorDescriptor = ($(this).attr("data-tabulator-descriptor") ? $(this).attr("data-tabulator-descriptor") : "");
+		
+		tabulators[tabulatorID] = {
+			
+			tabulator: $(this),
+			tabs: $(this).find("[data-tabulator-tab]"),
+			currentTab: null,
+			tabsRepository: $(this).find("[data-tabulator-tabs-repository]"),
+			scrollAnchor: $(this).find("[data-tabulator-anchor]"),
+			contents: $(this).find("[data-tabulator-tab-contents]"),
+			properties: (tabulatorsProperties[tabulatorDescriptor] ? tabulatorsProperties[tabulatorDescriptor] : {})
+		};
+
+		tabulators[tabulatorID].tabs.each(function() {
+			
+			var tab = $(this);
+			var tabDescriptor = ($(this).attr("data-tabulator-tab-descriptor") ? $(this).attr("data-tabulator-tab-descriptor") : "");
+
+			if(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass && tabulators[tabulatorID].tabs.filter("." + tabulators[tabulatorID].properties.tabsCurrentAdditionalClass))
+				tabulators[tabulatorID].currentTab = tabulators[tabulatorID].tabs.filter("." + tabulators[tabulatorID].properties.tabsCurrentAdditionalClass);
+				
+			tab.find("[data-tabulator-tab-link]").click(function() {
+
+				if(!tabulators[tabulatorID].currentTab || (tabulators[tabulatorID].currentTab && !tab.hasClass(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass))) {
+					
+					tabulators[tabulatorID].currentTab.toggleClass(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass);
+					tab.toggleClass(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass);
+					
+					tabulators[tabulatorID].contents.not("[class*='g-hidden']").toggleClass("g-hidden");
+					tabulators[tabulatorID].contents.filter("[data-tabulator-tab-contents-descriptor='" + tabDescriptor + "']").toggleClass("g-hidden");
+					
+					tabulators[tabulatorID].currentTab = tab;
+
+					if (tabulators[tabulatorID].scrollAnchor.length) {
+
+						$('html, body').animate({
+							scrollTop: tabulators[tabulatorID].scrollAnchor.offset().top - ( tabulators[tabulatorID].properties.scrollOffset ? tabulators[tabulatorID].properties.scrollOffset : 0 )
+						}, 1000);
+					}
+				}
+				
+				return false;
+			});
+			
+			if(tabulators[tabulatorID].properties.initializeFunction)
+				executeFunction(tabulators[tabulatorID].properties.initializeFunction, null, tabulatorID);
+		});
+
+		if(window.location.hash)
+			tabulators[tabulatorID].tabulator.find("[data-tabulator-tab][data-tabulator-tab-descriptor='" + window.location.hash.substr(1) + "']").find("[data-tabulator-tab-link]").click();
+
+		$(document).on( "click", "a[href*=#]", function(event) {
+
+			var link = $(this).attr("href");
+			if (/#[A-Za-z0-9-]+/.test(link) && link !== "#feedback") {
+
+				event.preventDefault();
+				$("[data-tabulator-tab][data-tabulator-tab-descriptor='" + link.match(/#[A-Za-z0-9-]+/)[0].substr(1) + "']").find("[data-tabulator-tab-link]").click();
+			}
+		});
 	});
 }
 
