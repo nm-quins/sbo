@@ -68,7 +68,7 @@ function initializeFields() {
 					$(this).toggleClass("b-checked-checkbox-field");
 					
 					if(fields[fieldID].entity)
-						fields[fieldID].entity.attr("checked", ($(this).hasClass("b-checked-checkbox-field") ? true : false));
+						fields[fieldID].entity.prop("checked", ($(this).hasClass("b-checked-checkbox-field") ? true : false));
 						
 					return false;
 				});

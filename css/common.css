@@ -1269,6 +1269,24 @@ a:hover {
 		margin-right:30px;
 	}
 	
+	.b-order-form .b-form-volant-return-button {
+		
+		float:left;
+		margin:0 -100% 0 -390px;
+	}
+	
+	.b-order-form .b-form-pay-card-button,
+	.b-order-form .b-form-pay-online-button {
+		
+		float:left;
+		width:280px;
+	}
+	
+	.b-order-form .b-form-pay-online-button {
+		
+		margin-left:10px;
+	}
+	
 	.b-order-form .b-form-section {
 		
 		margin:0 20px;
@@ -1487,6 +1505,122 @@ a:hover {
 	.b-order-form .b-form-section:first-child {
 		
 		border-top:0;
+	}
+	
+	.b-order-form .b-form-information-section {}
+		
+		.b-order-form .b-form-information-section .b-form-total-outcomes {
+			
+			position:relative;
+			padding-top:45px;
+			margin:45px 0 0 -30px;
+		}
+		
+		.b-order-form .b-form-information-section .b-form-total-outcomes:before {
+			
+			position:absolute;
+			top:0;
+			left:30px;
+			right:0;
+			height:1px;
+			background:#e1e1e1;
+			content:"";
+		}
+		
+	.b-order-form .b-form-confirmation {
+		
+		position:relative;
+		font-size:13px;
+		line-height:24px;
+	}
+	
+		.b-order-form .b-form-confirmation .b-form-confirmation-title {
+			
+			font-family: "PFAgoraSlabBold";
+			font-size:14px;
+			line-height:18px;
+			margin-bottom:-10px;
+		} 
+		
+		.b-order-form .b-form-confirmation .b-form-confirmation-paragraph,
+		.b-order-form .b-form-confirmation p {
+			
+			margin-top:20px;
+		}
+		
+		.b-order-form .b-form-confirmation .b-form-confirmation-paragraph:first-child,
+		.b-order-form .b-form-confirmation p:first-child {
+			
+			margin-top:0;
+		}
+		
+	.b-order-form .b-form-confirmation:before {
+	
+		position:absolute;
+		top:50%;
+		left:-330px;
+		width:64px;
+		height:64px;
+		font-size:36px;
+		line-height:64px;
+		text-align:center;
+		color:#fff;
+		background:#4b994b;
+		border-radius:32px;
+		margin-top:-32px;
+		content:"!";
+	}
+	
+	.b-order-form .b-form-outcome {
+		
+		font-size:14px;
+		line-height:20px;
+		margin-bottom:20px;
+	}
+		
+		.b-order-form .b-form-outcome .b-form-outcome-title {
+			
+			display:inline-block;
+			font-family:"PFAgoraSlab";
+			width:180px;
+			vertical-align:top;
+		}
+		
+		.b-order-form .b-form-outcome .b-form-outcome-contents {
+			
+			display:inline-block;
+			font-family:"PFAgoraSlabBold";
+			width:340px;
+			vertical-align:top;
+			margin-left:30px;
+		}
+		
+			.b-order-form .b-form-outcome .b-form-outcome-contents .b-form-outcome-contents-addition {
+				
+				color:#999;
+			}
+		
+	.b-order-form .b-form-outcome:last-child {
+		
+		margin-bottom:0;
+	}
+	
+	.b-order-form .b-form-phone-description {
+		
+		clear:none;
+		padding-top:0;
+		margin-bottom:40px;
+	}
+	
+	.b-order-form .b-form-mail-description {
+		
+		clear:none;
+		padding-top:0;
+	}
+	
+	.b-order-form .b-form-mail-description:before {
+		
+		margin-top:-32px;
 	}
 		
 	.b-order-form .b-form-target {
@@ -1752,6 +1886,16 @@ a:hover {
 		vertical-align:middle;
 	}	
 	
+	.b-order-form .b-form-checkbox-field-label {
+		
+		display:inline-block;
+		width:520px;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue", Arial, sans-serif;
+		font-size:13px;
+		line-height:18px;
+		vertical-align:middle;
+	}	
+	
 	.b-order-form .b-form-phone {
 		
 		padding:0 20px 60px 410px;
@@ -1820,6 +1964,11 @@ a:hover {
 		width:90px;
 		margin-left:10px;
 	}
+	
+	.b-order-form .b-form-confirmation-fieldset {
+		
+		margin-top:40px;
+	}
 			
 .b-radio-field {
 	
@@ -1869,6 +2018,59 @@ a:hover {
 	content:"";
 }
 
+.b-checkbox-field {
+	
+	display:inline-block;
+	position:relative;
+	width:26px;
+	height:26px;
+	box-sizing:border-box;
+	border:2px solid #ccc;
+	border-radius:5px;
+	vertical-align:middle;
+	margin-right:10px;
+	cursor:pointer;
+}
+
+	.b-checkbox-field .b-checkbox-field-entity {
+		
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		width:100%;
+		height:100%;
+		opacity:0;
+		z-index: 4;
+		cursor:pointer;
+	}
+	
+.b-checkbox-field:hover {
+	
+	border-color:#4b994b;
+}
+	
+.b-checked-checkbox-field {
+	
+	border-color:#4b994b;
+	background:#4b994b;
+}
+
+.b-checked-checkbox-field:before {
+	
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:10px;
+	height:10px;
+	background:#fff;
+	border-radius:2px;
+	margin:-5px 0 0 -5px;
+	z-index: 2;
+	content:"";
+}
+
 .b-button {
 	
 	display:inline-block;
@@ -1878,7 +2080,7 @@ a:hover {
 	color:#4b994b;
 	border:2px solid #4b994b;
 	margin:0;
-	padding:0 30px;
+	padding:0 25px;
 	background:none;
 	min-width:150px;
 	box-sizing:border-box;

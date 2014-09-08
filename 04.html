@@ -78,7 +78,7 @@
 							</ul>
 					
 							<ul class="b-products-article-steps">
-								<li class="b-products-article-steps-clause b-products-article-steps-current-clause">
+								<li class="b-products-article-steps-clause">
 									<span class="b-products-article-steps-clause-number">1</span>
 									<span class="b-products-article-steps-clause-title">Страховой полис</span>
 								</li>
@@ -90,7 +90,7 @@
 									<span class="b-products-article-steps-clause-number">3</span>
 									<span class="b-products-article-steps-clause-title">Паспортные данные</span>
 								</li>
-								<li class="b-products-article-steps-clause">
+								<li class="b-products-article-steps-clause b-products-article-steps-current-clause">
 									<span class="b-products-article-steps-clause-number">4</span>
 									<span class="b-products-article-steps-clause-title">Подтверждение</span>
 								</li>
@@ -102,83 +102,149 @@
 							
 							<form action="#" class="b-form b-order-form" data-tabulator-tab-contents="true" data-tabulator-tab-contents-descriptor="form">
 								
-								<section class="b-form-section b-form-target-section g-cleared">
+								<section class="b-form-section b-form-payer-section g-cleared">
 									<div class="b-form-section-inside">
-										<h3 class="b-form-section-title">Выберите, кто&nbsp;будет&nbsp;защищен</h3>
-										<input type="hidden" id="order-form-target" value="1" data-form-target-field="true">
-										<a href="#" class="b-form-target b-form-s-target b-form-current-target" data-form-target="true" data-form-target-value="1">
-											<span class="b-form-target-title">Дети</span>
-											<span class="b-form-target-age">2 &ndash; 24 лет</span>
-										</a>
-										<a href="#" class="b-form-target b-form-m-target" data-form-target="true" data-form-target-value="2">
-											<span class="b-form-target-title">Супруги</span>
-											<span class="b-form-target-age">18 &ndash; 65 лет</span>
-										</a>
-										<a href="#" class="b-form-target b-form-l-target" data-form-target="true" data-form-target-value="3">
-											<span class="b-form-target-title">Родители</span>
-											<span class="b-form-target-age">35 &ndash; 75 лет</span>
-										</a>
+										<h3 class="b-form-section-title">
+											ФИО страхователя
+											<span class="b-form-section-title-addition">Тот, кто оплачивает договор</span>
+										</h3>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Фамилия</dt>
+											<dd class="b-form-outcome-contents">Лермонтов</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Имя</dt>
+											<dd class="b-form-outcome-contents">Михаил</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Отчество</dt>
+											<dd class="b-form-outcome-contents">Юрьевич</dd>
+										</dl>
 									</div>
 								</section>
 								
-								<section class="b-form-section b-form-structure-section g-cleared">
+								<section class="b-form-section b-form-contacts-section g-cleared">
 									<div class="b-form-section-inside">
-										<h3 class="b-form-section-title">Страховая защита, включенная в&nbsp;программу</h3>
-										<div class="b-form-structure" data-accordion="true" data-accordion-descriptor="form-structure">
-											<ul class="b-form-structure-collection g-cleared">
-												<li class="b-form-structure-collection-clause b-form-structure-collection-fractures-clause">Переломы</li>
-												<li class="b-form-structure-collection-clause b-form-structure-collection-frostbites-clause">Обморожения</li>
-												<li class="b-form-structure-collection-clause b-form-structure-collection-injuries-clause">Тяжелые травмы</li>
-												<li class="b-form-structure-collection-clause b-form-structure-collection-burns-clause">Ожоги</li>
-											</ul>
-											<a href="#" class="b-form-structure-description-toggle" data-accordion-tumbler="true">Подробнее</a>
-											<div class="b-form-structure-description g-hidden" data-accordion-concealment="true">
-												<p class="b-form-structure-description-paragraph">Также в каждой из программ предусмотрена защита страхователя на случай ухода из жизни в результате несчастного случая с дополнительной выплатой, если причиной страхового случая стала авиационная или железнодорожная катастрофа.</p>
-												<p class="b-form-structure-description-paragraph">Подробный перечень травм, включенных в страховую программу, смотрите в разделе «<a href="#" class="b-form-structure-description-link">Полные условия страхования</a>».</p>
-											</div>
+										<h3 class="b-form-section-title">Контактные данные</h3>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Телефон</dt>
+											<dd class="b-form-outcome-contents">+7 903 123-45-67</dd>
+										</dl>
+										<div class="b-form-description b-form-phone-description">
+											<p>Для начисления бонусов СПАСИБО укажите номер телефона, зарегистрированный Вами в&nbsp;программе &laquo;СПАСИБО от&nbsp;Сбербанка&raquo;. Подробные условия участия и&nbsp;начисления бонусов на&nbsp;сайте <a href="#" class="b-form-description-link">http://www.spasibosberbank.ru</a></p>
+										</div>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Электронная почта</dt>
+											<dd class="b-form-outcome-contents">konstantin@konstantinovich.ru</dd>
+										</dl>
+										<div class="b-form-description b-form-mail-description b-form-important-description">
+											<p>Обратите особое внимание: на указанную электронную почту будет выслан ваш договор!</p>
+											<p>Указывайте только тот адрес, которым вы пользуетесь.</p>
 										</div>
 									</div>
 								</section>
 								
-								<section class="b-form-section b-form-triple-section b-form-price-section g-cleared">
+								<section class="b-form-section b-form-passport-section g-cleared">
 									<div class="b-form-section-inside">
-										<h3 class="b-form-section-title">Сумма страховой защиты</h3>
-										<fieldset class="b-form-fieldset">
-											<span class="b-radio-field b-checked-radio-field" data-field="true" data-field-descriptor="radio" data-field-name="order-price">
-												<input type="radio" name="order-form-price" id="order-form-price-1" class="b-radio-field-entity" value="1" data-field-entity="true" checked>
-											</span>
-											<label for="order-form-price-1" class="b-form-label b-form-radio-field-label">100 000 руб.</label>
-										</fieldset>
-										<fieldset class="b-form-fieldset">
-											<span class="b-radio-field" data-field="true" data-field-descriptor="radio" data-field-name="order-price">
-												<input type="radio" name="order-form-price" id="order-form-price-2" class="b-radio-field-entity" value="2" data-field-entity="true">
-											</span>
-											<label for="order-form-price-2" class="b-form-label b-form-radio-field-label">200 000 руб.</label>
-										</fieldset>
-										<fieldset class="b-form-fieldset">
-											<span class="b-radio-field" data-field="true" data-field-descriptor="radio" data-field-name="order-price">
-												<input type="radio" name="order-form-price" id="order-form-price-3" class="b-radio-field-entity" value="3" data-field-entity="true">
-											</span>
-											<label for="order-form-price-3" class="b-form-label b-form-radio-field-label">500 000 руб.</label>
-										</fieldset>
+										<h3 class="b-form-section-title">Паспортные данные</h3>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Дата рождения</dt>
+											<dd class="b-form-outcome-contents">19 сентября 1950</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Серия и номер паспорта</dt>
+											<dd class="b-form-outcome-contents">1234 123456</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Дата выдачи</dt>
+											<dd class="b-form-outcome-contents">20 декабря 1980</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Код подразделения</dt>
+											<dd class="b-form-outcome-contents">123-456</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Код подразделения</dt>
+											<dd class="b-form-outcome-contents">ОВД ОУФМС РОССИИ ПО Г. МОСКВЕ В ЮАО ПО РОССИЙСКОЙ ФЕДЕРАЦИИ АДМИРАЛТЕЙСТВОМ № 1239-45</dd>
+										</dl>
 									</div>
 								</section>
 								
-								<section class="b-form-section b-form-actions-section">
+								<section class="b-form-section b-form-address-section g-cleared">
 									<div class="b-form-section-inside">
-										
+										<h3 class="b-form-section-title">Адрес регистрации</h3>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Регион РФ</dt>
+											<dd class="b-form-outcome-contents">Центральный</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Район</dt>
+											<dd class="b-form-outcome-contents">Москва</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Населенный пункт</dt>
+											<dd class="b-form-outcome-contents">Москва</dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Адрес регистрации</dt>
+											<dd class="b-form-outcome-contents">Симферопольская улица, дом 67, квартира 890</dd>
+										</dl>
+									</div>
+								</section>
+								
+								<section class="b-form-section b-form-information-section g-cleared">
+									<div class="b-form-section-inside">
+										<h3 class="b-form-section-title">Страховой полис</h3>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Кто будет защищен</dt>
+											<dd class="b-form-outcome-contents">Дети <em class="b-form-outcome-contents-addition">от 2 до 24 лет</em></dd>
+										</dl>
+										<dl class="b-form-outcome">
+											<dt class="b-form-outcome-title">Сумма страховой защиты</dt>
+											<dd class="b-form-outcome-contents">200 000 руб.</dd>
+										</dl>
 										<ul class="b-form-total-outcomes g-cleared">
 											<li class="b-form-total-outcomes-clause">
 												<span class="b-form-total-outcomes-clause-title">Итоговая стоимость:</span>
-												<strong class="b-form-total-outcomes-clause-contents" data-form-total-price="true">1 000 руб.</strong>
+												<strong class="b-form-total-outcomes-clause-contents">2 000 руб.</strong>
 											</li>
 											<li class="b-form-total-outcomes-clause">
 												<span class="b-form-total-outcomes-clause-title">Срок действия:</span>
 												<strong class="b-form-total-outcomes-clause-contents">1 год</strong>
 											</li>
 										</ul>
+									</div>
+								</section>
+								
+								<section class="b-form-section b-form-actions-section g-cleared">
+									<div class="b-form-section-inside">
 										
-										<input type="submit" value="Купить" class="b-button b-green-button b-form-send-button">
+										<div class="b-form-confirmation">
+											<h3 class="b-form-confirmation-title">Внимание!</h3>
+											<p class="b-form-confirmation-paragraph">После выбора программы и&nbsp;заполнения данных Страхователя, на&nbsp;указанную Вами электронную почту будут направлены: <a href="#" class="b-form-confirmation-link">Ваш договор страхования</a> (страховой полис) в&nbsp;электронном виде, подписанный Страховщиком и&nbsp;<a href="#" class="b-form-confirmation-link">Правила добровольного страхования от&nbsp;несчастных случаев &laquo;Защита близких&raquo;</a>. Пожалуйста, ознакомьтесь с&nbsp;ними до&nbsp;момента оплаты.</p>
+										</div>
+										
+										<fieldset class="b-form-fieldset b-form-confirmation-fieldset">
+											
+											<span class="b-checkbox-field" data-field="true" data-field-descriptor="checkbox">
+												<input type="checkbox" id="order-form-confirmation" class="b-checkbox-field-entity" data-field-entity="true">
+											</span>
+											
+											<label for="order-form-confirmation" class="b-form-label b-form-checkbox-field-label">Ознакомился и&nbsp;принимаю <a href="#" class="b-form-label-link">условия страхования</a> и&nbsp;выражаю согласие на&nbsp;обработку персональных данных ООО СК&nbsp;&laquo;Сбербанк Страхование Жизни&raquo;</label>
+											
+										</fieldset>
+										
+									</div>
+								</section>
+								
+								<section class="b-form-section b-form-actions-section g-cleared">
+									<div class="b-form-section-inside">
+										
+										<a href="#" class="b-button b-form-return-button b-form-volant-return-button">Вернуться</a>
+										
+										<a href="#" class="b-button b-green-button b-form-pay-card-button">Оплатить банковской картой</a>
+
+										<a href="#" class="b-button b-green-button b-form-pay-online-button">Оплатить «Сбербанк ОнЛ@йн»</a>
 										
 									</div>
 								</section>
